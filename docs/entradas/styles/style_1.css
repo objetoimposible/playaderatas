@@ -379,7 +379,9 @@ hr {
     #sidebar {
         display: none;
     }
-
+    #pool{
+        margin: 0 0 4rem;
+    }
     #pool #inner {
         margin: 0 2rem;
     }
