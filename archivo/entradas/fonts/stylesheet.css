@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'DXRigraf-SemiBold';
+    src: url('DXRigraf-SemiBold.woff2') format('woff2'),
+        url('DXRigraf-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DXRigraf-SemiBoldExpanded';
+    src: url('DXRigraf-SemiBoldExpanded.woff2') format('woff2'),
+        url('DXRigraf-SemiBoldExpanded.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DXRigraf-SemBdExpIta';
+    src: url('DXRigraf-SemBdExpIta.woff2') format('woff2'),
+        url('DXRigraf-SemBdExpIta.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DXRigraf-SemiBoldItalic';
+    src: url('DXRigraf-SemiBoldItalic.woff2') format('woff2'),
+        url('DXRigraf-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+

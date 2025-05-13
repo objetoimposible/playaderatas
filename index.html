@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/p5.js"></script>
+  <!-- Compressed JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style-index.css">
+  <meta charset="utf-8" />
+  <!-- Compressed CSS -->
+
+  <title>Playa de ratas</title>
+  <script src="https://cdn.counter.dev/script.js" data-id="4c4b5358-e2d8-4eb0-bbd0-20e398c1dff2"
+    data-utcoffset="-3"></script>
+</head>
+
+<body>
+  <div id="page-container">
+    <div id="contenido">
+      <div class="grid-x">
+        <div class="small-12">
+          <ol class="no-bullet text-center" id="archivo">
+            <li>
+              <div class="grid-x">
+                <div class="small-12 medium-4 cell">
+                  <h2><b>1.</b> <a href="archivo/entradas/txt-1.html"><b>primer intento de
+                        redacción</b></a></h2>
+                </div>
+                <div class="small-12 medium-3 cell">
+                  <i>por</i> <b>objetoImposible</b>
+                </div>
+                <div class="small-12 medium-3 cell">
+                  11 de enero 2025
+                </div>
+                <div class="small-12 medium-2 cell">
+                  <div class="label rounded"><small><b>#editorial</b></small></div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="small-11 small-offset-1 medium-4 medium-offset-0 cell">
+          <small>playa de ratas es un lugar de edición</i></small>
+        </div>
+        <div class="small-11 small-offset-1 medium-4 medium-offset-0 cell">
+          temuco, wallmapu - sur de chile
+        </div>
+        <div class="small-11 small-offset-1 medium-2 medium-offset-0 cell">
+          <a href="https://www.instagram.com/playaderatas_/" target="_blank">Instagram</a>
+        </div>
+        <div class="small-11 small-offset-1 medium-2 medium-offset-0 cell">
+          <a href="https://www.instagram.com/objetoimposible/" target="_blank">@objetoimposible</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis()
+
+    lenis.on('scroll', (e) => {
+      console.log(e)
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+    // const hexDigits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "a", "b", "c", "d", "e", "f"];
+
+    // function generateRandomColor(hexDigits) {
+    //   let bgColor = "#";
+
+    //   for (let i = 0; i < 6; i++) {
+    //     const index = Math.floor(Math.random() * hexDigits.length);
+    //     bgColor += hexDigits[index];
+    //   }
+    //   return bgColor;
+    // }
+
+    // function changeBgColor() {
+    //   const color = generateRandomColor(hexDigits);
+    //   document.body.style.backgroundColor = color;
+    // }
+
+    // window.addEventListener("load", changeBgColor());
+  </script>
+
+</body>
+
+</html>

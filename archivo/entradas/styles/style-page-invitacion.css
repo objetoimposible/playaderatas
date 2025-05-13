@@ -1,0 +1,105 @@
+/* style.css */
+
+/*Fuente Objeto Imposible > Fraunces*/
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+/*Fuente cuerpos > Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: #d9c5d1;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+}
+p{
+  font-size: .925rem;
+}
+a{
+  color: blue;
+  text-decoration: underline;
+}
+a:hover, a:focus{
+  color: blue;
+  text-decoration: none;
+}
+#page-container{
+  background: rgb(217,197,209);
+  background: linear-gradient(180deg, rgba(217,197,209,1) 0%, rgba(255,246,251,1) 100%);
+}
+#portada {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #sketch {
+    canvas {
+      display: block;
+      position: relative !important;
+      width: 100% !important;
+      height: 100% !important;
+      top: 0 !important;
+      left: 0 !important;
+      padding: 1rem;
+    }
+  }
+  h2{
+    position: absolute;
+    bottom: 30px;
+    font-size: 1.1rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-family: Fraunces, 'DX-Rigraf', sans-serif;
+    left: 0;
+    letter-spacing: -.2px;
+  }
+  #rotate_word{
+    display: inline-block;
+    font-family: Fraunces, 'DX-Rigraf', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+  }
+}
+#contenido{
+  padding: 4rem 0;
+  h3{
+    font-family: Fraunces, 'DX-Rigraf', sans-serif;
+    font-size: 3.5rem;
+  }  
+  blockquote{
+    color: #333;
+    margin: 3rem 0 0 0 !important;
+    font-size: .8rem;
+  }
+  blockquote p{
+    color: #333;
+    font-size: .85rem !important;
+    line-height: 1.4rem;
+  }
+  cite{
+    color: black;
+    margin-top: .75rem;
+    margin-bottom: 2rem;
+  }
+  h5{
+    font-size: .9rem;
+    font-weight: 600;
+    font-family: Fraunces, 'DX-Rigraf', sans-serif;
+    margin-bottom: 3rem;
+  }
+  h6{
+    font-family: Fraunces, 'DX-Rigraf', sans-serif;
+    margin: 3rem 0;
+    font-size: 1.4rem;
+    small{
+      color: rgba(0, 0, 255, 0.644);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+  }
+}
