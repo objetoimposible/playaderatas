@@ -224,10 +224,7 @@ hr {
     background: rgb(0, 0, 0, 0.9);
 }
 
-#featured-image {
-    height: 60vh;
-    overflow: hidden;
-}
+
 
 #sidebar {
     border-right: 1px solid rgba(0, 0, 0, 1);
@@ -379,9 +376,11 @@ hr {
     #sidebar {
         display: none;
     }
-    #pool{
+
+    #pool {
         margin: 0 0 4rem;
     }
+
     #pool #inner {
         margin: 0 2rem;
     }
@@ -455,6 +454,8 @@ hr {
             margin: 2rem 6rem 1rem;
         }
     }
+
+
 }
 
 /* Medium only */
