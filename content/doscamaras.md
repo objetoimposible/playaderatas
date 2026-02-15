@@ -18,3 +18,5 @@ La __estación espacial rusa Mir__ operó en una órbita terrestre baja, con una
 - Desorbitación: 23 de marzo de 2001, en el Pacífico Sur.
 
 La Mir fue la primera estación espacial modular, ensamblada entre 1986 y 1996, y sirvió como base tecnológica para la Estación Espacial Internacional (EEI).
+
+---

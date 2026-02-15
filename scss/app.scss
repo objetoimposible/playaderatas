@@ -67,9 +67,11 @@
 $pad-def    :   3rem    ;
 
 
+body{
+    background-color: $medium-gray;
+}
 
 header {
-    background-color: white;
 }
 
 nav {
@@ -89,8 +91,8 @@ nav {
 }
 
 main {
-    background-color: white;
-    padding: $pad-def $pad-def/2;
+    background-color: none;
+    padding: $pad-def $pad-def/2 $pad-def*3;
     h1{
         font-weight: bolder;
     }
@@ -110,12 +112,17 @@ main {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    min-width: 100vw;
     border-top: 1px dotted $dark-gray;
     padding: $pad-def/3;
     background-color: white;
 
     h6 {
-        font-size: 1rem;
+        font-size: .8rem;
+        margin: 0;
+        opacity: 0.7;
     }
 }
 

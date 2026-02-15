@@ -19,27 +19,35 @@
 
   <div class="grid-x">
     <div class="small-10 small-offset-1 cell">
-  
-  
+
+
       <main>
         <header>
-          <h1>$title$</h1>
+          <h1>$title$
+            $if(date)$
+            <sup class="subheader">$date$</sup>
+            $endif$
+          </h1>
+         
         </header>
         <section>
+          <hr/>
+          $if(toc)$
+          
+          $toc$
+          <hr/>
+          $endif$
           $body$
         </section>
-        <div>
-          $if(date)$
-          <p><span class="label"><b>$date$</b></span></p>
-          $endif$
-        </div>
       </main>
-       <footer>
-    <!-- <h6>Generado por $author$ usando Pandoc.</h6> -->
-  </footer>
+
     </div>
   </div>
- 
+
+  <footer>
+    <h6>Escrito en Markdown y compilado con <a target="_blank" href="https://pandoc.org/">Pandoc</a></h6>
+  </footer>
+
 
   <script src="js/jquery.min.js"></script>
   <script src="js/what-input.min.js"></script>

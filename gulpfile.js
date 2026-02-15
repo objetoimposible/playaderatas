@@ -4,6 +4,7 @@ const browserSync  = require('browser-sync').create();
 const sourcemaps   = require('gulp-sourcemaps');
 const { exec }     = require('child_process');
 const fs           = require('fs');
+const ghPages      = require('gh-pages'); // <--- Nueva dependencia
 
 const includePaths = [
     'node_modules/foundation-sites/scss',
@@ -49,6 +50,17 @@ function buildPandoc(done) {
     });
 }
 
+/**
+ * PUBLICA EN GITHUB PAGES
+ * Toma el contenido de /dist y lo sube a la rama gh-pages
+ */
+function deploy(done) {
+    ghPages.publish('dist', {
+        branch: 'gh-pages',
+        message: 'Auto-generated update'
+    }, done);
+}
+
 function serve() {
     browserSync.init({
         server: { baseDir: "./dist", index: "index.html" },
@@ -66,4 +78,8 @@ function serve() {
     );
 }
 
+// Tarea para desarrollo local
 gulp.task('default', gulp.series(clean, copyAssets, buildPandoc, sassBuild, serve));
+
+// Tarea para publicar: Limpia, Compila todo y sube a GitHub Pages
+gulp.task('deploy', gulp.series(clean, copyAssets, buildPandoc, sassBuild, deploy));
