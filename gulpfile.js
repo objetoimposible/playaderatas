@@ -4,7 +4,7 @@ const browserSync  = require('browser-sync').create();
 const sourcemaps   = require('gulp-sourcemaps');
 const { exec }     = require('child_process');
 const fs           = require('fs');
-const ghPages      = require('gh-pages'); // <--- Nueva dependencia
+const ghPages      = require('gh-pages');
 
 const includePaths = [
     'node_modules/foundation-sites/scss',
@@ -33,6 +33,9 @@ function sassBuild() {
 }
 
 function copyAssets() {
+    // COPIA DE HTML: Asegura que el index.html vaya a dist para que GitHub lo vea
+    gulp.src(['*.html']).pipe(gulp.dest('dist')); 
+    
     gulp.src('img/**/*', { allowEmpty: true }).pipe(gulp.dest('dist/img'));
     return gulp.src([
         'js/**/*.js',
@@ -50,15 +53,14 @@ function buildPandoc(done) {
     });
 }
 
-/**
- * PUBLICA EN GITHUB PAGES
- * Toma el contenido de /dist y lo sube a la rama gh-pages
- */
 function deploy(done) {
     ghPages.publish('dist', {
         branch: 'gh-pages',
-        message: 'Auto-generated update'
-    }, done);
+        message: 'Auto-generated update ' + new Date().toISOString()
+    }, (err) => {
+        if (err) console.error("Error en Deploy:", err);
+        done(err);
+    });
 }
 
 function serve() {
@@ -67,19 +69,20 @@ function serve() {
         notify: false
     });
 
-    gulp.watch("scss/**/*.scss", sassBuild);
+    // Ahora el watch dispara el deploy automáticamente tras compilar
+    gulp.watch("scss/**/*.scss", gulp.series(sassBuild, deploy));
     
     gulp.watch(
         ["content/**/*.md", "layout.html", "layout-archivo.html"], 
-        gulp.series(buildPandoc, (done) => {
+        gulp.series(buildPandoc, copyAssets, deploy, (done) => {
             browserSync.reload();
             done();
         })
     );
 }
 
-// Tarea para desarrollo local
+// Tarea para desarrollo local (con auto-deploy al guardar)
 gulp.task('default', gulp.series(clean, copyAssets, buildPandoc, sassBuild, serve));
 
-// Tarea para publicar: Limpia, Compila todo y sube a GitHub Pages
+// Tarea para publicar manualmente
 gulp.task('deploy', gulp.series(clean, copyAssets, buildPandoc, sassBuild, deploy));

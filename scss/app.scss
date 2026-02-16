@@ -94,6 +94,27 @@ nav {
                 color: $black;
             }
         }
+        #nav-index{
+            a{
+                color: $black;
+                border: 1px solid $black;
+            }
+            a:hover, a:focus{
+                color: $dark-gray;
+                border: 1px solid $black;
+                background: $black;
+            }
+        }
+        #nav-last{
+            a{
+                color: blue;
+                text-decoration: underline;
+            }
+            a:hover, a:focus{
+                color: blue;
+                text-decoration: none;
+            }
+        }
     }
 }
 

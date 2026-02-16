@@ -43,8 +43,8 @@ if [ -n "$LAST_FILE_PATH" ]; then
     LAST_TITLE=$(pandoc --template <(echo '$title$') "$LAST_FILE_PATH" 2>/dev/null)
     [ -z "$LAST_TITLE" ] && LAST_TITLE="$LAST_FILENAME"
     
-    NAV_LINKS="<li><a href='index.html'>inicio</a></li>"
-    NAV_LINKS="$NAV_LINKS<li><a href='${LAST_FILENAME}.html'>$LAST_TITLE</a></li>"
+    NAV_LINKS="<li id='nav-index'><a href='index.html'>index</a></li>"
+    NAV_LINKS="$NAV_LINKS<li id='nav-last'><a href='${LAST_FILENAME}.html'>$LAST_TITLE</a></li>"
 else
     NAV_LINKS="<li><a href='index.html'>inicio</a></li>"
 fi
