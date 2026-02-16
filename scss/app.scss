@@ -68,7 +68,7 @@ $pad-def    :   3rem    ;
 
 
 body{
-    background-color: $medium-gray;
+    background-color: $light-gray;
 }
 
 header {
@@ -82,7 +82,7 @@ header {
 }
 
 nav {
-    background-color: $dark-gray;
+    background-color: $medium-gray;
     padding: $pad-def/3;
     ul {
         li {
@@ -126,13 +126,14 @@ main {
     }
     h2 {
         font-size: 1.2rem;
+        font-weight: 600;
     }
 
     p {
         font-size: .9rem;
     }
 
-    ul{
+    ul, ol{
         li{
             font-size: .9rem;
         }
@@ -154,6 +155,7 @@ footer {
     }
 }
 
+sub, sup {font-size: 65%;}
 a{text-decoration: underline;}
 a:hover, a:focus{text-decoration: none;}
 a:visited{text-decoration: overline;}
@@ -164,6 +166,20 @@ figure{
         font-size: .8rem;
         padding-top: $pad-def/5;
     }
+}
+.tag-label {
+    font-size: 0.75rem;
+    background: #f0f0f0;
+    color: #666;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 5px;
+    border: 1px solid #ddd;
+}
+.tag-label:hover {
+    background: #e0e0e0;
+    color: #000;
 }
 // Fuerza a que todos los videos generados por Pandoc sean responsivos
 main video, 
