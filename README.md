@@ -2,6 +2,7 @@
 
 ## Edición y Compilado
 
- `gulp` realiza la compilación del proyecto pandoc en `/dist` (branch de `gh-pages`), vigila cambios via BrowserSync, y sirve los archivos al repositorio github.
+`gulp` realiza la compilación del proyecto pandoc en `/dist` (carpeta que es `branch` de `gh-pages`), vigila cambios (HTML/JS/SCSS) via BrowserSync, y sirve los archivos al repositorio github.
 
- el archivo `./pdf.sh` permite exportar todo el contenido en formato pdf, en la carpeta `/dist`
+
+El archivo `./pdf.sh` permite exportar todo el contenido en formato pdf, en la carpeta `/dist`
