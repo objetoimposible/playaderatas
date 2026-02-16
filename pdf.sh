@@ -1,26 +1,39 @@
 #!/bin/bash
 
 SOURCE_DIR="content"
-OUTPUT_FILE="dist/playaderatas_archivo.pdf"
+FECHA_HOY=$(date +"%Y-%m-%d")
+mkdir -p pdf
+OUTPUT_FILE="pdf/${FECHA_HOY}_playaderatas_archivo.pdf"
 
-echo "🎨 Iniciando generación de PDF transhistórico (Versión Estable)..."
+echo "🎨 Generando PDF: Portada (P1), Índice (P2), Contenido (P3+)"
 
-# Crear una corriente de contenido limpio y ordenado
-for f in $(ls "$SOURCE_DIR"/*.md | sort -V); do
-    # 1. Extraer el título del YAML para usarlo como encabezado de sección
-    TITLE=$(pandoc --template <(echo '$title$') "$f" 2>/dev/null)
-    [ -z "$TITLE" ] && TITLE=$(basename "$f" .md)
-    
-    # 2. Enviar al flujo: Título + Contenido (limpiando caracteres nulos y quitando el YAML original)
-    echo "# $TITLE"
-    tr -d '\000' < "$f" | sed '1,/---/d; /---/d'
-    echo -e "\n\pagebreak\n" # Forzar salto de página entre entradas
-done | pandoc -o "$OUTPUT_FILE" \
+# 1. GENERAR FLUJO DE CONTENIDO MANUAL
+(
+  echo "\maketitle"       # P1: Portada
+  echo "\newpage"
+  
+  echo "\tableofcontents" # P2: Índice
+  echo "\newpage"
+
+  # P3 en adelante: Contenido
+  for f in $(ls "$SOURCE_DIR"/*.md | sort -V); do
+      TITLE=$(pandoc --template <(echo '$title$') "$f" 2>/dev/null)
+      [ -z "$TITLE" ] && TITLE=$(basename "$f" .md)
+      ENTRY_DATE=$(pandoc --template <(echo '$date$') "$f" 2>/dev/null)
+      
+      echo "# $TITLE"
+      if [ -n "$ENTRY_DATE" ] && [ "$ENTRY_DATE" != "" ]; then
+          echo -e "\n*${ENTRY_DATE}*\n" 
+      fi
+      
+      tr -d '\000' < "$f" | sed '1,/---/d; /---/d'
+      echo -e "\n\pagebreak\n" 
+  done
+) | pandoc -o "$OUTPUT_FILE" \
     --pdf-engine=xelatex \
     -V lang=es \
     -V geometry:margin=1in \
-    --toc \
-    --toc-depth=2 \
+    --syntax-highlighting=none \
     -V title="Playa de ratas" \
     -V author="Objeto Imposible" \
     -V mainfont="Helvetica" \
@@ -29,20 +42,30 @@ done | pandoc -o "$OUTPUT_FILE" \
     -V colorlinks=true \
     -V linkcolor=blue \
     -H <(echo '
+% Anular comandos automáticos de la plantilla de Pandoc
+\let\oldmaketitle\maketitle
+\renewcommand{\maketitle}{}
+\let\oldtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{}
+
 \usepackage{float}
 \usepackage{titling}
 \usepackage{etoolbox}
 
-% Estilo de título
+% Configuración estética de la Portada (usando los comandos originales guardados)
 \pretitle{\begin{center}\LARGE\bfseries}
 \posttitle{\end{center}\vspace{2em}}
+\predate{} \date{} \postdate{}
 
-% Aire en el índice
+% Restaurar comandos para uso manual en el flujo
+\let\maketitle\oldmaketitle
+\let\tableofcontents\oldtableofcontents
+
+% Espaciado en el Índice
 \preto\tableofcontents{\vspace{3em}}
 \appto\tableofcontents{\vspace{3em}}
 
-% CORRECCIÓN DEFINITIVA DE FIGURAS:
-% Acepta los argumentos de Pandoc [htbp] o [H] pero los ignora para evitar errores
+% SOLUCIÓN DEFINITIVA FIGURAS: Acepta argumentos opcionales y los ignora
 \makeatletter
 \renewenvironment{figure}[1][]{%
   \def\@captype{figure}%
