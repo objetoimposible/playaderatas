@@ -10,7 +10,7 @@ INDEX_CONTENT="---
 title: playaderatas
 ---
 
-"
+<ol>"
 
 # Listar archivos y procesarlos
 for file in $(ls "$SOURCE_DIR"/*.md | sort -V); do
@@ -34,7 +34,7 @@ for file in $(ls "$SOURCE_DIR"/*.md | sort -V); do
 done
 
 INDEX_CONTENT="$INDEX_CONTENT
-"
+</ol>"
 
 # 2. NAVEGACIÓN (Lógica del último archivo)
 LAST_FILE_PATH=$(ls "$SOURCE_DIR"/*.md | grep -vE "archivo.md|[Rr][Ee][Aa][Dd][Mm][Ee].md" | sort -V | tail -n 1)
