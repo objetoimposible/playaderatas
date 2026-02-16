@@ -74,6 +74,13 @@ body{
 header {
 }
 
+#logo{
+    max-width: 200px;
+  position: absolute;
+  bottom: 50px;
+  right: 40px;
+}
+
 nav {
     background-color: $dark-gray;
     padding: $pad-def/3;

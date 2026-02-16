@@ -1,5 +1,5 @@
 ---
-title: "Sistema de transmisión de barrido lento"
+title: "Televisión de barrido lento"
 author: "Nico"
 description: "Web generada con Pandoc y un script Bash"
 date: 6 de mayo, 2024

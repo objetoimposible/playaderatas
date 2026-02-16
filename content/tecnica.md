@@ -1,5 +1,5 @@
 ---
-title: "Herramientas técnicas"
+title: "Obsolecencia y sistemas de codificación"
 author: "Nico"
 description: "Markdown"
 date: 14 de febrero, 2026

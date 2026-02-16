@@ -1,5 +1,5 @@
 ---
-title: "2 hipótesis sobre 2 cámaras"
+title: "Dos hipótesis sobre dos cámaras"
 author: "Nico"
 description: "Web generada con Pandoc y un script Bash"
 date: 6 de marzo, 2024
