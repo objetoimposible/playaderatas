@@ -73,7 +73,7 @@ for file in $ALL_FILES; do
 done
 INDEX_CONTENT="$INDEX_CONTENT\n</ol>"
 
-# 5. COMPILACIÓN DE ENTRADAS (Asegurando 4.doscamaras.html)
+# 5. COMPILACIÓN DE ENTRADAS 
 for file in $ALL_FILES; do
     filename=$(basename "$file")
     filename="${filename%.*}"
