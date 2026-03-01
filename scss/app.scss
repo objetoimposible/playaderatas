@@ -58,58 +58,103 @@
 
 // --- VARIABLES PROPIAS ---
 $pad-def: 3rem;
+$back: #e2ecf6;
+$nav: #c4ddf6;
 
 // --- ESTILOS BASE ---
 body {
-    background-color: $light-gray;
+    background-color: $back;
 }
 
-sub, sup { font-size: 65%; }
-h1 { font-size: 1.8rem; }
-hr { min-width: 100%; border-bottom: 1px dotted $dark-gray; }
+sub,
+sup {
+    font-size: 65%;
+}
+
+h1 {
+    font-size: 1.8rem;
+    line-height: 1.1;
+}
+
+.subheader {
+    margin-top: 20px;
+}
+
+hr {
+    min-width: 100%;
+    border-bottom: 1px dotted $dark-gray;
+}
 
 a {
     text-decoration: underline;
-    &:hover, &:focus { text-decoration: none; }
-    &:visited { text-decoration: overline; }
+    color: blue;
 }
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: blue;
+}
+
+a:visited {
+    text-decoration: overline;
+}
+
 ul {
-  list-style-type: disclosure-closed;
+    list-style-type: disclosure-closed;
 }
-h3{
+
+h3 {
     text-transform: uppercase;
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px dotted black;
-}
-h3{
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
     border-bottom: 1px dotted black;
 }
+
+h3 {
+    border-bottom: 1px dotted black;
+}
+
+.subheader {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
 
 // --- COMPONENTES ESPECÍFICOS ---
 #logo {
     max-width: 200px;
     position: fixed;
-    bottom: 50px;
+    bottom: 37px;
     right: 40px;
 }
 
 nav {
-    background-color: $medium-gray;
+    background-color: $nav;
     padding: $pad-def/3;
 
     ul {
         li {
             font-style: normal;
-            a { color: $white; }
-            a:hover, a:focus { color: $black; }
+
+            a {
+                color: $white;
+            }
+
+            a:hover,
+            a:focus {
+                color: $black;
+            }
         }
 
         #nav-index {
             a {
                 color: $black;
                 border: 1px solid $black;
-                &:hover, &:focus {
+
+                &:hover,
+                &:focus {
                     color: $dark-gray;
                     background: $black;
                 }
@@ -120,7 +165,11 @@ nav {
             a {
                 color: blue;
                 text-decoration: underline;
-                &:hover, &:focus { text-decoration: none; }
+
+                &:hover,
+                &:focus {
+                    text-decoration: none;
+                }
             }
         }
     }
@@ -129,17 +178,40 @@ nav {
 main {
     padding: $pad-def ($pad-def/2) ($pad-def * 3);
     max-width: 80vw;
-    h1 { font-weight: bolder; }
-    h2 { font-size: 1.2rem; font-weight: 600; }
-    p, ul li, ol li { font-size: .9rem; }
 
-    video, iframe {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        display: block;
-        margin: ($pad-def/1.5) 0 ($pad-def/5);
+h1 {
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+p,
+ul li,
+ol li {
+    font-size: .9rem;
+}
+
+video,
+iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+    margin: ($pad-def/1.5) 0 ($pad-def/5);
+}
+
+img {
+    mix-blend-mode: luminosity;
+}
+
+#lista-entradas {
+    li {
+        margin-bottom: 5px;
     }
+}
 }
 
 figure {
@@ -158,6 +230,7 @@ figure {
     text-decoration: none;
     margin-left: 5px;
     border: 1px solid #ddd;
+
     &:hover {
         background: #e0e0e0;
         color: #000;
@@ -169,7 +242,7 @@ footer {
     bottom: 0;
     min-width: 100vw;
     border-top: 1px dotted $dark-gray;
-    padding: $pad-def/3;
+    padding: $pad-def/6 $pad-def/3;
     background-color: white;
 
     h6 {

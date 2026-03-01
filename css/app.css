@@ -6940,7 +6940,7 @@ html.is-reveal-open body {
 }
 
 body {
-  background-color: #e6e6e6;
+  background-color: #e2ecf6;
 }
 
 sub, sup {
@@ -6949,6 +6949,11 @@ sub, sup {
 
 h1 {
   font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.subheader {
+  margin-top: 20px;
 }
 
 hr {
@@ -6981,6 +6986,10 @@ h3 {
   border-bottom: 1px dotted black;
 }
 
+.subheader {
+  display: block;
+}
+
 #logo {
   max-width: 200px;
   position: fixed;
@@ -6989,7 +6998,7 @@ h3 {
 }
 
 nav {
-  background-color: #cacaca;
+  background-color: #c4ddf6;
   padding: 1rem;
 }
 nav ul li {
@@ -7037,6 +7046,9 @@ main video, main iframe {
   aspect-ratio: 16/9;
   display: block;
   margin: 2rem 0 0.6rem;
+}
+main img {
+  mix-blend-mode: luminosity;
 }
 
 figure figcaption {

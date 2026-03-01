@@ -53,7 +53,7 @@ done
 INDEX_CONTENT="---
 title: playaderatas
 ---
-<ol>"
+<ol id="lista-entradas">"
 for file in $ALL_FILES; do
     filename=$(basename "$file")
     filename="${filename%.*}"
