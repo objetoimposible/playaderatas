@@ -6943,7 +6943,8 @@ body {
   background-color: #e2ecf6;
 }
 
-sub, sup {
+sub,
+sup {
   font-size: 65%;
 }
 
@@ -6963,10 +6964,15 @@ hr {
 
 a {
   text-decoration: underline;
+  color: blue;
 }
-a:hover, a:focus {
+
+a:hover,
+a:focus {
   text-decoration: none;
+  color: blue;
 }
+
 a:visited {
   text-decoration: overline;
 }
@@ -6976,7 +6982,6 @@ ul {
 }
 
 h3 {
-  text-transform: uppercase;
   font-size: 1.4rem;
   margin-bottom: 2rem;
   border-bottom: 1px dotted black;
@@ -6988,12 +6993,14 @@ h3 {
 
 .subheader {
   display: block;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 
 #logo {
   max-width: 200px;
   position: fixed;
-  bottom: 50px;
+  bottom: 37px;
   right: 40px;
 }
 
@@ -7007,7 +7014,8 @@ nav ul li {
 nav ul li a {
   color: #fefefe;
 }
-nav ul li a:hover, nav ul li a:focus {
+nav ul li a:hover,
+nav ul li a:focus {
   color: #0a0a0a;
 }
 nav ul #nav-index a {
@@ -7037,10 +7045,13 @@ main h2 {
   font-size: 1.2rem;
   font-weight: 600;
 }
-main p, main ul li, main ol li {
+main p,
+main ul li,
+main ol li {
   font-size: 0.9rem;
 }
-main video, main iframe {
+main video,
+main iframe {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
@@ -7049,6 +7060,9 @@ main video, main iframe {
 }
 main img {
   mix-blend-mode: luminosity;
+}
+main #lista-entradas li {
+  margin-bottom: 5px;
 }
 
 figure figcaption {
@@ -7076,7 +7090,7 @@ footer {
   bottom: 0;
   min-width: 100vw;
   border-top: 1px dotted #8a8a8a;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: white;
 }
 footer h6 {

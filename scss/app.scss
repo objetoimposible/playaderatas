@@ -105,14 +105,13 @@ ul {
 }
 
 h3 {
-    text-transform: uppercase;
     font-size: 1.4rem;
     margin-bottom: 2rem;
     border-bottom: 1px dotted black;
 }
 
-h3 {
-    border-bottom: 1px dotted black;
+h3 b {
+    color: blue;
 }
 
 .subheader {

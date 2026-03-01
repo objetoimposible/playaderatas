@@ -37,7 +37,7 @@ done
 # 3. GENERAR PÁGINAS DE ETIQUETAS
 for tag in "${!TAG_MAP[@]}"; do
     TAG_FILENAME="tag-${tag// /-}.html"
-    TAG_PAGE_CONTENT="---\ntitle: \"Etiqueta: $tag\"\n---\n<h3>registro de <b>$tag</b></h3>\n<ul>"
+    TAG_PAGE_CONTENT="---\ntitle: \"Etiqueta: $tag\"\n---\n<h3>Registro de <b>$tag</b></h3>\n<ul>"
     for file_path in ${TAG_MAP[$tag]}; do
         fname=$(basename "$file_path")
         fname="${fname%.*}"
@@ -51,7 +51,7 @@ done
 
 # 4. GENERAR ÍNDICE (Con etiquetas al lado del título)
 INDEX_CONTENT="---
-title: playaderatas
+title: Playa de Ratas
 ---
 <ol id="lista-entradas">"
 for file in $ALL_FILES; do
