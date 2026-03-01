@@ -62,11 +62,12 @@
 
 @use "sass:color";
 @import 'util/util';
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 110%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -83,7 +84,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: "Syne Mono", 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-safe-padding: false;
 $body-antialiased: true;
 $global-margin: 1rem;
