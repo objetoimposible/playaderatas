@@ -6977,6 +6977,10 @@ h3 {
   border-bottom: 1px dotted black;
 }
 
+h3 {
+  border-bottom: 1px dotted black;
+}
+
 #logo {
   max-width: 200px;
   position: absolute;
