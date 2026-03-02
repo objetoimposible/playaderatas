@@ -33,7 +33,6 @@ function sassBuild() {
 }
 
 function copyAssets() {
-    // COPIA DE HTML: Asegura que el index.html vaya a dist para que GitHub lo vea
     gulp.src(['*.html']).pipe(gulp.dest('dist')); 
     
     gulp.src('img/**/*', { allowEmpty: true }).pipe(gulp.dest('dist/img'));
@@ -69,7 +68,6 @@ function serve() {
         notify: false
     });
 
-    // Ahora el watch dispara el deploy automáticamente tras compilar
     gulp.watch("scss/**/*.scss", gulp.series(sassBuild, deploy));
     
     gulp.watch(
@@ -81,8 +79,5 @@ function serve() {
     );
 }
 
-// Tarea para desarrollo local (con auto-deploy al guardar)
 gulp.task('default', gulp.series(clean, copyAssets, buildPandoc, sassBuild, serve));
-
-// Tarea para publicar manualmente
 gulp.task('deploy', gulp.series(clean, copyAssets, buildPandoc, sassBuild, deploy));

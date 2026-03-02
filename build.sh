@@ -53,7 +53,7 @@ done
 INDEX_CONTENT="---
 title: Playa de Ratas
 ---
-<ol id="lista-entradas">"
+<ol id=\"lista-entradas\">"
 for file in $ALL_FILES; do
     filename=$(basename "$file")
     filename="${filename%.*}"
@@ -89,12 +89,10 @@ echo -e "$INDEX_CONTENT" | pandoc -s -f markdown+raw_html --template="./layout-a
 echo "🎨 Sincronizando estilos y recursos..."
 mkdir -p "$OUTPUT_DIR/css" "$OUTPUT_DIR/img"
 
-# Silenciamos advertencias de Sass para ver errores reales
 LOAD_PATHS="--load-path=node_modules/foundation-sites/scss --load-path=node_modules/motion-ui/src"
 npx sass $LOAD_PATHS scss/app.scss css/app.css --no-source-map --quiet-deps || true
 npx sass $LOAD_PATHS scss/app.scss "$OUTPUT_DIR/css/app.css" --no-source-map --quiet-deps || true
 
-# COPIA DE IMÁGENES: Forzamos la actualización sin importar fechas
 if [ -d "$SOURCE_DIR/img" ]; then
     cp -Rpf "$SOURCE_DIR/img/." "$OUTPUT_DIR/img/" 2>/dev/null
     echo "📷 Imágenes sincronizadas."
@@ -102,3 +100,4 @@ fi
 [ -f "css/app.css" ] && cp -f "css/app.css" "$OUTPUT_DIR/css/app.css"
 
 echo "🚀 Todo actualizado."
+    

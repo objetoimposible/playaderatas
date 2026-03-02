@@ -6987,8 +6987,8 @@ h3 {
   border-bottom: 1px dotted black;
 }
 
-h3 {
-  border-bottom: 1px dotted black;
+h3 b {
+  color: blue;
 }
 
 .subheader {
